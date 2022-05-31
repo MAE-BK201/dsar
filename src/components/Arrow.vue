@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { Position } from "../interfaces";
+import { Position } from "../interfaces/linkedlist";
 import { computed } from "vue";
 
 const props = defineProps<{ from: Position; to: Position | null }>();

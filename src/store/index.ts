@@ -1,6 +1,5 @@
 import { defineStore } from "pinia";
-import type { Position } from "../interfaces";
-import { LinkedList, IListNode } from "../interfaces/linkedlist";
+import { LinkedList, IListNode, Position } from "../interfaces/linkedlist";
 
 export const useStore = defineStore("main", {
   state: () => ({
