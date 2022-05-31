@@ -39,40 +39,26 @@ onMounted(() => {
     for (let [key, watch] of Object.entries(watchers)) {
       if (key == markerElement.id) clearInterval(watch);
     }
+    store.showModal(false)
     store.removeById(markerElement.id);
   });
 });
 
 onUnmounted(() => {
-  document.removeEventListener("markerFound", (marker: any) => {});
-  document.removeEventListener("markerLost", (marker: any) => {});
+  document.removeEventListener("markerFound", (marker: any) => { });
+  document.removeEventListener("markerLost", (marker: any) => { });
 
   for (let v of Object.values(watchers)) {
     clearInterval(v);
   }
 });
 
-// const len = ref(2);
-// const dir = ref({ x: 0, y: 0, z: 0 });
-
-// setTimeout(() => {
-//   console.log("changing");
-//   len.value = 3;
-// }, 10000);
-
-// setTimeout(() => {
-//   console.log("changing dir");
-//   dir.value = { x: -2, y: 0, z: 2 };
-// }, 10000);
 </script>
 
 <template>
   <Modal v-show="store.isModalShowing" />
   <Metadata />
   <a-scene embedded arjs vr-mode-ui="enabled:false" ref="sceneRef">
-    <a-assets>
-      <a-asset-item id="arrow" src="models/arrow.gltf"></a-asset-item>
-    </a-assets>
 
     <Markers />
     <a-entity camera />
