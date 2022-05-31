@@ -4,6 +4,7 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
+    "dev-https": "vite --https --host",
     "build": "vue-tsc --noEmit && tsc-strict && vite build",
     "preview": "vite preview"
   },
