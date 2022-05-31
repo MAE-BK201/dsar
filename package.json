@@ -4,15 +4,25 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc --noEmit && vite build",
+    "build": "vue-tsc --noEmit && tsc-strict && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
+    "@ar-js-org/ar.js": "^3.4.0",
+    "aframe": "1.0.4",
+    "aframe-arrow-component": "^1.0.0",
+    "aframe-text-geometry-component": "^0.5.1",
+    "pinia": "^2.0.14",
+    "uuid": "^8.3.2",
     "vue": "^3.2.25"
   },
   "devDependencies": {
+    "@types/three": "^0.140.0",
+    "@types/uuid": "^8.3.4",
     "@vitejs/plugin-vue": "^2.3.3",
+    "tailwindcss": "^3.0.24",
     "typescript": "^4.5.4",
+    "typescript-strict-plugin": "^2.0.0",
     "vite": "^2.9.9",
     "vue-tsc": "^0.34.7"
   }
